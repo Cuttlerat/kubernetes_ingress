@@ -1,0 +1,15 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: node-web-server
+  namespace: default
+spec:
+  rules:
+  - host: test.foo.bar
+    http:
+      paths:
+      - path: "/"
+        backend:
+          serviceName: simple-webserver
+          servicePort: 8082
